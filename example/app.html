@@ -13,24 +13,9 @@
 
   const { createRouter, RouterLink } = SvelteRouter
 
-  const store = new Store({
-    animal: 'dog',
-    sheep: 'baaah',
-    moo: {
-      cow: true,
-      foo: "bar"
-    }
-  })
-
-
   const router = createRouter({
     '/': Home,
-    '/welcome': {
-      Component: Welcome,
-      props: {
-        store
-      }
-    },
+    '/welcome': Welcome,
     '/test/replace': Replace
   })
   createRouter.listen(_ => {
